@@ -7,11 +7,15 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     font-size: 16px;
     font-family: 'Karla', sans-serif;
     font-weight: 400;
     background-color: hsl(204, 43%, 93%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -36,10 +40,10 @@ p {
 
 /* Sections */
 
-.container {
+main {
     width: 85%;
-    margin: 0 auto;
-    padding: 50px 0;
+    margin: 50px 0;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.05);
 }
 
 .header,
@@ -66,11 +70,17 @@ p {
     color: #fff;
 }
 
+.pmt-details {
+    display: flex;
+    align-items: center;
+}
+
 .price {
     font-size: 2em;
 }
 
 .pmt-frequency {
+    margin-left: 10px;
     font-weight: 200;
     opacity: 0.5;
 }
@@ -106,12 +116,12 @@ button {
     padding: 3px 0;
 }
 
-
 /* Footer */
 
 footer {
     width: 100%;
     padding-bottom: 10px;
+    align-self: flex-end;
 }
 
 .attribution { 
@@ -123,4 +133,38 @@ footer {
 .attribution a { 
     color: hsl(228, 45%, 44%);
     text-decoration: none; 
+}
+
+/* Media Queries */
+
+@media (min-width: 992px) {
+    main {
+        width: 70%;
+        max-width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header {
+        flex-basis: 100%;
+    }
+
+    .pricing,
+    .why-us {
+        flex-basis: 50%;
+    }
+
+    .header,
+    .pricing,
+    .why-us {
+        padding: 40px 30px;
+}
+
+    .pricing {
+       border-bottom-left-radius: 5px;
+    }
+
+    .why-us {
+    border-bottom-left-radius: 0px;
+    }
 }
